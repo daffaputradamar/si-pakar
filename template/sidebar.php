@@ -51,7 +51,7 @@
             <a href="perhitungancf.php" class="nav-link">
               <i class="nav-icon fas fa-square-root-alt"></i>
               <p>
-                Perhitungan CF
+                Perhitungan CF & Fuzzy
               </p>
             </a>
           </li>

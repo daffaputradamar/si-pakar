@@ -121,8 +121,7 @@
                                 <tr>
                                     <td> # </td>
                                     <td> Gejala Penyakit </td>
-                                    <td> CF Faktor </td>
-                                    <td> Nilai Fuzzy </td>
+                                    <td> Nilai Gejala </td>
                                     <!-- <td> &nbsp; </td> -->
                                 </tr>
                             </thead>
@@ -131,8 +130,7 @@
                                 $qBukaGejala = "SELECT 
                                   g.id_gejala
                                   , g.gejala
-                                  , g.cfpakar
-                                  , g.fuzzypakar
+                                  , g.nilai_gejala
                                   FROM tblkategori_gejala kg
                                   JOIN tblpenyakit p ON kg.id_penyakit = p.id_penyakit
                                   JOIN tblgejala g ON kg.id_gejala = g.id_gejala
@@ -145,8 +143,7 @@
                                     <tr>
                                         <td> <?= $row['id_gejala']; ?> </td>
                                         <td> <?= $row['gejala']; ?> </td>
-                                        <td> <?= $row['cfpakar']; ?> </td>
-                                        <td> <?= $row['fuzzypakar']; ?> </td>
+                                        <td> <?= $row['nilai_gejala']; ?> </td>
                                         <!-- <td>
                                             <a id="btnright" href="#"> <i class="fas fa-angle-right"></i> </a>  
                                         </td> -->
@@ -158,9 +155,9 @@
                         </table>  
                         </div>
                         <div class="col-md-5">   
-                         <ul id="list_tujuan" class="list-group">
+                          <ul id="list_tujuan" class="list-group">
                             
-                         </ul>         
+                          </ul>         
                         </div>
                     </div>
                   </div>
@@ -209,19 +206,19 @@
 
 <script>
 
-     $('#tblgejala tbody tr #btnright').on('click', function (e) {
+    $('#tblgejala tbody tr #btnright').on('click', function (e) {
         e.preventDefault();
         
          var $item = $(this).closest("tr")   // Finds the closest row <tr> 
                             .find(".nr")     // Gets a descendent with class="nr"
-                           .text(); 
-         console.log($item);  
-         let isi_list = `
-           <li class="list-group-item"> ${$item} </li>
-         `;
-         $('#list_tujuan').append( isi_list );
-     });  
-     
+                            .text(); 
+        console.log($item);  
+        let isi_list = `
+          <li class="list-group-item"> ${$item} </li>
+        `;
+        $('#list_tujuan').append( isi_list );
+    });  
+
 </script>
 
 </body>
