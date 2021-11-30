@@ -282,6 +282,7 @@ if(@$_GET['act'] == "awal") {
                                 <td>No</td>
                                 <td>Nama Penyakit</td>
                                 <td>Hasil Kalkulasi CF</td>
+                                <td>Hasil Kalkulasi Fuzzy</td>
                               </tr>
                             </thead>
                             <tbody id="tbldiagnosa">
